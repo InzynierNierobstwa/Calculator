@@ -7,15 +7,16 @@ const isOperator = value => {
 
 const Button = props => {
   return (
-    <button
+    <div
       className={
         isOperator(props.children)
           ? styles.button__number
           : styles.button__operator
       }
+      onClick={() => props.handleClickFn(props.children)}
     >
       {props.children}
-    </button>
+    </div>
   );
 };
 
